@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <title>Weather Dashboard</title>
-</head>
-<body>
-  
+  </head>
+  <body>
+    <div class="header">
+      <h1>Weather Dashboard</h1>
+    </div>
+    <main>
+        <div class="current-city"></div>
+        <!-- 5 day forecast cards -->
+        <div class="forecast"></div>
+        <div class="forecast"></div>
+        <div class="forecast"></div>
+        <div class="forecast"></div>
+        <div class="forecast"></div>
+        
+    </main>
+    <aside class="city-search">
+      <div>
+        <h2>Search for a City:</h2>
+      </div>
+      <div>
+        <form></form>
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="search-history"></div>
+    </aside>
+    
+
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
