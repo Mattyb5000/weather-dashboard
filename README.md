@@ -8,4 +8,4 @@ This weather dashboard allows you to search any city and find the current weathe
 ## Deployed site
 You can find the deployed site here:
 
-[Weather Dashboard](
+[Weather Dashboard](https://mattyb5000.github.io/weather-dashboard/)
