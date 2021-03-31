@@ -1,28 +1,42 @@
 var searchForm = $("#search-form");
 var searchTermEl = $("#city-searched");
+var citySpan = $("#city");
+var iconSpan = $("#icon");
+var listEl = $("#city-list");
+var temperatureEl = $("#temperature")
+var humidityEl = $("#humidity")
+var windEl = $("#wind-speed")
+var sectionEl = ("#today-forecast")
 
-searchForm.on("submit", function (event) {
-    event.preventDefault();
-    // grab search term element out of the input
-    var searchTerm = searchTermEl.val();
-    console.log(searchTerm);
-    var apiKey = "32af9b566fb40383ac2ad9e8afe40987";
-    // build the api url with the search term and the api key
-    var queryUrl =
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
-        searchTerm + "&appid=" + apiKey;
+function oneDay() {
+    searchForm.on("submit", function (event) {
+        event.preventDefault();
+        var searchTerm = searchTermEl.val();
+        var apiKey = "32af9b566fb40383ac2ad9e8afe40987";
+        var queryUrl =
+            "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=" +
+            searchTerm + "&appid=" + apiKey;
 
-    // api call using fetch
-    fetch(queryUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-        });
-    // convert response from JSON
-    // start by console logging the data
-    // api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-});
+        fetch(queryUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                citySpan.text(data.name);
+                var dateSpan = moment().format("(l)")
+                $("#date").text(dateSpan);
+                temperatureEl.text(data.main.temp + " °F");
+                humidityEl.text(data.main.humidity + "%");
+                windEl.text(data.wind.speed + " MPH");
+                // TODO: find UV index 
+                listEl.append('<li class="list-item">' + data.name + '</li>');
+                // TODO: make list items clickable to bring up search results again
+            });
+    });
+    fiveDay();
+};
+oneDay();
 
-// 32af9b566fb40383ac2ad9e8afe40987
+function fiveDay() {
+    console.log("this is 5 day forecast")
+}

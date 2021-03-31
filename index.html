@@ -36,18 +36,20 @@
             <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
             <button type="submit" class="btn btn-primary"><i class="fas fa-search-location"></i></button>
 <!-- placeholder unordered list for previous city searches -->
-            <ul class="list-group">
-              <li class="list-group-item"></li>
-              <li class="list-group-item"></li>
-              <li class="list-group-item"></li>
-              <li class="list-group-item"></li>
-              <li class="list-group-item"></li>
+            <ul class="list-group" id="city-list">
             </ul>
           </form>
         </aside>
 
         <main class="col-sm-9">
-          <section class="border">Today's forecast</section>
+          <section class="border" id="today-forecast">
+            <h2><span id="city"></span> <span id="date"></span><span id="icon"></span></h2>
+            <p >Temperature: <span id="temperature"></span></p>
+            <p >Humidity: <span id="humidity"></span></p>
+            <p >Wind Speed: <span id="wind-speed"></span></p>
+            <p id="UV-index">UV Index: </p>
+          </section>
+
           <section>5-Day Forecast</section>
         </main>
       </div>
@@ -57,6 +59,10 @@
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
     <script src="./assets/js/script.js"></script>
   </body>
